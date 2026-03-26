@@ -101,7 +101,7 @@
         setLoading(true);
         histRef.current=[...histRef.current,{role:"user",content:text}];
         try {
-          "https://falling-fog-a517.bestwish1987.workers.dev"
+const res = await fetch("https://falling-fog-a517.bestwish1987.workers.dev",{
             method:"POST",headers:{"Content-Type":"application/json"},
             body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,system:SYSTEM_PROMPT,messages:histRef.current})
           });
